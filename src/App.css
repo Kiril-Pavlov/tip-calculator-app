@@ -4,13 +4,47 @@
   margin: 0px;
 }
 
-body{
-  background-color: var(--primary-color);
-}
-
 :root{
   --primary-color:hsl(172, 67%, 45%);
-
-
+  
+  --very-dark:hsl(183, 100%, 15%);
+  --dark:hsl(186, 14%, 43%);
+  --grayish:hsl(184, 14%, 56%);
+  --light:hsl(185, 41%, 84%);
+  --very-light:hsl(189, 41%, 97%);
+  --white:hsl(0, 0%, 100%);
+  
+  
   --primary-font: 'Space Mono', monospace;
+  --font-weight:700;
+}
+
+body{
+  background-color: var(--light);
+  font-family: var(--primary-font);
+  font-weight: var(--font-weight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  grid-gap: 50px;
+}
+
+.logo-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator-container{
+  height: 500px;
+  width: 800px;
+  background-color: var(--white);
+  border-radius: 30px;
+  padding: 30px;
 }
