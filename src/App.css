@@ -1,0 +1,16 @@
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body{
+  background-color: var(--primary-color);
+}
+
+:root{
+  --primary-color:hsl(172, 67%, 45%);
+
+
+  --primary-font: 'Space Mono', monospace;
+}
