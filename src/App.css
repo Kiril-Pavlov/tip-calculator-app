@@ -42,9 +42,82 @@ body{
 }
 
 .calculator-container{
-  height: 500px;
-  width: 800px;
+  height: 350px;
+  width: 700px;
   background-color: var(--white);
+  border-radius: 30px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.inputs-container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.total-bill-input,
+.number-of-people{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.total-bill-input label,
+.number-of-people label{
+  color: var(--dark);
+  font-size: 12px;
+}
+
+.total-bill-input input,
+.number-of-people input{
+  height: 30px;
+  background-color: var(--very-light);
+  border: none;
+  text-align: right;
+  padding: 3px 10px;
+  font-family: var(--primary-font);
+  color: var(--very-dark);
+}
+
+.percent-options-container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 10px;
+}
+
+.percent-options-container button{
+  padding: 5px;
+  border: none;
+  background-color: var(--very-dark);
+  color: var(--very-light);
+  font-family: var(--primary-font);
+  width: 100%;
+  border-radius: 5px;
+}
+
+.percent-options-container input{
+  border: none;
+  background-color: var(--very-light);
+  width: 100%;
+  border-radius: 5px;
+}
+
+.percent-options-container input::placeholder{
+  color: var(--dark);
+  font-family: var(--primary-font);
+  text-align: center;
+}
+
+
+
+
+
+.results-container{
+  background-color: var(--very-dark);
   border-radius: 30px;
   padding: 30px;
 }
