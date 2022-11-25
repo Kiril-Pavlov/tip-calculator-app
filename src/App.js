@@ -74,10 +74,6 @@ function App() {
           <button className='reset-button'>RESET</button>
         </div>
       </div>
-      Testing <br />
-      {billAmount} <br />
-      {tipPercent} <br />
-      {numberPeople}
     </div>
   );
 }
