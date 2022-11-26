@@ -33,11 +33,11 @@ function App() {
           <div className='tip-percent-select'>
             <label htmlFor="">Select Tip %</label>
             <div className='percent-options-container'>
-              <button onClick={()=>setTipPercent(5)}>5%</button>
-              <button onClick={()=>setTipPercent(10)}>10%</button>
-              <button onClick={()=>setTipPercent(15)}>15%</button>
-              <button onClick={()=>setTipPercent(25)}>25%</button>
-              <button onClick={()=>setTipPercent(50)}>50%</button>
+              <button onClick={()=>setTipPercent(5)} className={tipPercent===5 ? " select-percent-button activeBtn":"select-percent-button"}>5%</button>
+              <button onClick={()=>setTipPercent(10)} className={tipPercent===10 ? " select-percent-button activeBtn":"select-percent-button"}>10%</button>
+              <button onClick={()=>setTipPercent(15)} className={tipPercent===15 ? " select-percent-button activeBtn":"select-percent-button"}>15%</button>
+              <button onClick={()=>setTipPercent(25)} className={tipPercent===25 ? " select-percent-button activeBtn":"select-percent-button"}>25%</button>
+              <button onClick={()=>setTipPercent(50)}  className={tipPercent===50 ? " select-percent-button activeBtn":"select-percent-button"}>50%</button>
               <input type="text" placeholder='Custom' />
             </div>
           </div>
