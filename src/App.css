@@ -106,7 +106,7 @@ body{
 
 .activeBtn{
   background-color: var(--primary-color);
-  color: var(dark);
+  color: var(--very-dark);
 }
 
 .percent-options-container input{
@@ -115,6 +115,15 @@ body{
   background-color: var(--very-light);
   width: 100%;
   border-radius: 5px;
+  font-family: var(--primary-font);
+  text-align: center;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.percent-options-container input:focus{
+  background-color: var(--primary-color);
+  outline: none;
 }
 
 .percent-options-container input::placeholder{

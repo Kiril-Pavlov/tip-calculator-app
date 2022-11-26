@@ -38,7 +38,7 @@ function App() {
               <button onClick={()=>setTipPercent(15)} className={tipPercent===15 ? " select-percent-button activeBtn":"select-percent-button"}>15%</button>
               <button onClick={()=>setTipPercent(25)} className={tipPercent===25 ? " select-percent-button activeBtn":"select-percent-button"}>25%</button>
               <button onClick={()=>setTipPercent(50)}  className={tipPercent===50 ? " select-percent-button activeBtn":"select-percent-button"}>50%</button>
-              <input type="text" placeholder='Custom' />
+              <input type="text" placeholder='Custom' onChange={(e)=>{setTipPercent(e.target.value)}}/>
             </div>
           </div>
           <div className='number-of-people'>
