@@ -15,6 +15,12 @@ function App() {
     setNumberPeople(e.target.value)
   }
 
+  const handleResetCalculation = ()=>{
+    setBillAmount(0)
+    setTipPercent(0)
+    setNumberPeople(0)
+  }
+
   return (
     <div className="main-container">
       <div className='logo-container'><img src={logo} alt="Logo" /></div>
@@ -71,7 +77,7 @@ function App() {
               </div>
             </div>
           </div>
-          <button className='reset-button'>RESET</button>
+          <button className='reset-button' onClick={handleResetCalculation}>RESET</button>
         </div>
       </div>
     </div>
