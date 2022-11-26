@@ -60,7 +60,7 @@ function App() {
             <div className="tip-amount-container">
               <div className='tip-amount-left'>
                 <div className='tip-amount-text'>
-                  Tip Amount
+                  Total
                 </div>
                 <div className='tip-amount-person'>
                   /person

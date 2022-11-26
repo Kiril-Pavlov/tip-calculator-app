@@ -26,7 +26,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  padding: 20px 0px;
 }
 
 .main-container{
@@ -57,6 +57,7 @@ body{
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
+  grid-gap: 20px;
 }
 
 .total-bill-input,
@@ -67,9 +68,10 @@ body{
 }
 
 .total-bill-input label,
-.number-of-people label{
+.number-of-people label,
+.tip-percent-select label{
   color: var(--dark);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .total-bill-input input,
@@ -77,6 +79,7 @@ body{
   height: 30px;
   background-color: var(--very-light);
   border: none;
+  border-bottom: 2px solid var(--dark);
   text-align: right;
   padding: 3px 10px;
   font-family: var(--primary-font);
@@ -87,20 +90,23 @@ body{
   display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-gap: 10px;
+  margin-top: 10px;
 }
 
 .percent-options-container button{
-  padding: 5px;
+  padding: 8px;
   border: none;
   background-color: var(--very-dark);
   color: var(--very-light);
   font-family: var(--primary-font);
   width: 100%;
   border-radius: 5px;
+  font-size: 16px;
 }
 
 .percent-options-container input{
   border: none;
+  border-bottom: 2px solid var(--dark);
   background-color: var(--very-light);
   width: 100%;
   border-radius: 5px;
@@ -123,6 +129,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  grid-gap: 30px;
 }
 
 .results-container-up{
@@ -167,4 +174,16 @@ body{
   font-family: var(--primary-font);
   padding: 5px;
   border-radius: 5px;
+}
+
+@media screen and (max-width:700px){
+  .calculator-container{
+    height: fit-content;
+    max-width: 350px;
+    grid-template-columns: 1fr;
+  }
+
+  .percent-options-container{
+    grid-template-columns: repeat(2,1fr);
+  }
 }
