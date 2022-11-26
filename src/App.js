@@ -59,7 +59,7 @@ function App() {
                 </div>
               </div>
               <div className='tip-amount-right'>
-                {"$"+((billAmount/numberPeople)*(tipPercent/100)).toFixed(2)}
+                {(billAmount===0 || numberPeople ===0) ? "$"+0 : "$"+((billAmount/numberPeople)*(tipPercent/100)).toFixed(2)}
               </div>
             </div>
             {/* total */}
@@ -73,7 +73,7 @@ function App() {
                 </div>
               </div>
               <div className='tip-amount-right'>
-                {"$"+((billAmount/numberPeople)*(tipPercent/100+1)).toFixed(2)}
+                {(billAmount===0 || numberPeople ===0) ? "$"+0 : "$"+((billAmount/numberPeople)*(tipPercent/100+1)).toFixed(2)}
               </div>
             </div>
           </div>
