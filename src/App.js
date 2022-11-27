@@ -3,16 +3,16 @@ import './App.css';
 import logo from "./assets/logo.svg"
 
 function App() {
-  const [billAmount,setBillAmount]=useState(0)
-  const [tipPercent, setTipPercent]=useState(0)
-  const [numberPeople,setNumberPeople]=useState(0)
+  const [billAmount,setBillAmount]=useState("")
+  const [tipPercent, setTipPercent]=useState("")
+  const [numberPeople,setNumberPeople]=useState("")
 
   const handleBillAmount = (e) => {
-    setBillAmount(e.target.value)
+    setBillAmount(Number(e.target.value))
   }
 
   const handleNumberPeople = (e) => {
-    setNumberPeople(e.target.value)
+    setNumberPeople(Number(e.target.value))
   }
 
   const handleResetCalculation = ()=>{
@@ -21,14 +21,19 @@ function App() {
     setNumberPeople(0)
   }
 
+  console.log(typeof(billAmount))
+  console.log(typeof(numberPeople))
+
   return (
     <div className="main-container">
       <div className='logo-container'><img src={logo} alt="Logo" /></div>
       <div className='calculator-container'>
         <div className='inputs-container'>
           <div className='total-bill-input'>
-            <label htmlFor="">Bill</label>
-            <input type="text" placeholder='$' value={billAmount} onChange={handleBillAmount}/>
+            <div className='input-label-error-container'>
+              <label htmlFor="">Bill</label><span>{billAmount<=0 ? "Cant be zero" : ""}</span>
+            </div>
+            <input type="number" placeholder='$' value={billAmount} onChange={handleBillAmount}/>
           </div>
           <div className='tip-percent-select'>
             <label htmlFor="">Select Tip %</label>
@@ -38,12 +43,14 @@ function App() {
               <button onClick={()=>setTipPercent(15)} className={tipPercent===15 ? " select-percent-button activeBtn":"select-percent-button"}>15%</button>
               <button onClick={()=>setTipPercent(25)} className={tipPercent===25 ? " select-percent-button activeBtn":"select-percent-button"}>25%</button>
               <button onClick={()=>setTipPercent(50)}  className={tipPercent===50 ? " select-percent-button activeBtn":"select-percent-button"}>50%</button>
-              <input type="text" placeholder='Custom' onChange={(e)=>{setTipPercent(e.target.value)}}/>
+              <input type="number" placeholder='Custom' onChange={(e)=>{setTipPercent(e.target.value)}} onFocus={(e)=>{setTipPercent(0)}}/>
             </div>
           </div>
           <div className='number-of-people'>
-            <label htmlFor="">Number of people</label>
-            <input type="text" placeholder='people' value={numberPeople} onChange={handleNumberPeople}/>
+          <div className='input-label-error-container'>
+              <label htmlFor="">Number of people</label><span>{billAmount<=0 ? "Cant be zero" : ""}</span>
+            </div>
+            <input type="number" placeholder='people' value={numberPeople} onChange={handleNumberPeople}/>
           </div>
         </div>
         <div className='results-container'>
@@ -59,7 +66,7 @@ function App() {
                 </div>
               </div>
               <div className='tip-amount-right'>
-                {(billAmount===0 || numberPeople ===0) ? "$"+0 : "$"+((billAmount/numberPeople)*(tipPercent/100)).toFixed(2)}
+                {(billAmount<=0 || numberPeople<=0) ? "$"+0 : "$"+((billAmount/numberPeople)*(tipPercent/100)).toFixed(2)}
               </div>
             </div>
             {/* total */}
@@ -73,7 +80,7 @@ function App() {
                 </div>
               </div>
               <div className='tip-amount-right'>
-                {(billAmount===0 || numberPeople ===0) ? "$"+0 : "$"+((billAmount/numberPeople)*(tipPercent/100+1)).toFixed(2)}
+                {(billAmount<=0 || numberPeople<=0) ? "$"+0 : "$"+((billAmount/numberPeople)*(tipPercent/100+1)).toFixed(2)}
               </div>
             </div>
           </div>
